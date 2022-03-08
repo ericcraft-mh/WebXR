@@ -6,6 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | WebXR</title>
     <meta name="description" content="">
+    <meta name="apple-itunes-app" content="app-id=1295998056, app-argument=https://ericcraft-mh.github.io/WebXR/">
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
@@ -15,26 +16,21 @@
         <canvas id="unity-canvas" style="width: 100%; height: 100%;"></canvas>
       </div>
       <div id="unity-loading-bar">
-        <div id="unity-logo"></div>
+        <div id="car-logo"></div>
         <div id="unity-progress-bar-empty">
           <div id="unity-progress-bar-full"></div>
         </div>
       </div>
       <div id="unity-footer">
-        <div id="unity-webgl-logo"></div>
-        <button id="entervr" value="Enter VR" disabled>VR</button>
-        <button id="enterar" value="Enter AR" disabled>AR</button>
-        <div id="unity-webxr-link">Using <a href="https://github.com/De-Panther/unity-webxr-export" target="_blank" title="WebXR Export">WebXR Export</a></div>
-        <div id="unity-build-title">WebXR</div>
       </div>
     </div>
     <script>
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/WebXR.loader.js";
       var config = {
-        dataUrl: buildUrl + "/WebXR.data.unityweb",
-        frameworkUrl: buildUrl + "/WebXR.framework.js.unityweb",
-        codeUrl: buildUrl + "/WebXR.wasm.unityweb",
+        dataUrl: buildUrl + "/WebXR.data",
+        frameworkUrl: buildUrl + "/WebXR.framework.js",
+        codeUrl: buildUrl + "/WebXR.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "WebXR",
@@ -71,23 +67,17 @@
         });
       };
       document.body.appendChild(script);
-
+/*
       let enterARButton = document.getElementById('enterar');
-      let enterVRButton = document.getElementById('entervr');
 
       document.addEventListener('onARSupportedCheck', function (event) {
         enterARButton.disabled = !event.detail.supported;
-      }, false);
-      document.addEventListener('onVRSupportedCheck', function (event) {
-        enterVRButton.disabled = !event.detail.supported;
       }, false);
 
       enterARButton.addEventListener('click', function (event) {
         unityInstance.Module.WebXR.toggleAR();
       }, false);
-      enterVRButton.addEventListener('click', function (event) {
-        unityInstance.Module.WebXR.toggleVR();
-      }, false);
+*/      
     </script>
   </body>
 </html>
